@@ -8,10 +8,16 @@ public class TopDownCharacterController : MonoBehaviour
     //evnet 외부에서는 호출하지 못하게 막는다.
     public event Action<Vector2> OnMoveEvent;
     public event Action<Vector2> OnLookEvent;
-    public event Action OnAttackEvent;
+    public event Action<AttackSO> OnAttackEvent;
 
     public float timeSinceLastAttack = float.MaxValue;
     protected bool IsAttacking { get; set; }
+    protected CharacterStatsHandler Stats { get; private set; }
+
+    protected virtual void Awake()
+    {
+        Stats = GetComponent<CharacterStatsHandler>();
+    }
 
     protected virtual void Update()
     {
@@ -20,14 +26,17 @@ public class TopDownCharacterController : MonoBehaviour
 
     private void HandleAttackDelay()
     {
-        if (timeSinceLastAttack <= 0.2f)
+        if (Stats.CurrentStats.attackSO == null)
+            return;
+
+        if (timeSinceLastAttack <= Stats.CurrentStats.attackSO.delay)
         {
             timeSinceLastAttack += Time.deltaTime;
         }
-        if(IsAttacking && timeSinceLastAttack > 0.2)
+        if(IsAttacking && timeSinceLastAttack > Stats.CurrentStats.attackSO.delay)
         {
             timeSinceLastAttack = 0;
-            CallAttackEvent();
+            CallAttackEvent(Stats.CurrentStats.attackSO);
         }
     }
 
@@ -41,9 +50,9 @@ public class TopDownCharacterController : MonoBehaviour
         OnLookEvent?.Invoke(direction);
     }
 
-    public void CallAttackEvent()
+    public void CallAttackEvent(AttackSO attackSO)
     {
-        OnAttackEvent?.Invoke();
+        OnAttackEvent?.Invoke(attackSO);
     }
 }
 
