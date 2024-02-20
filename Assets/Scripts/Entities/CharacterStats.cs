@@ -7,7 +7,7 @@ using UnityEngine;
 public enum StatsChangeType
 {
     Add,
-    Muptiple,
+    Multiple,
     Override
 }
 [Serializable]
