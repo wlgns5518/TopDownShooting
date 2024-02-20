@@ -10,7 +10,7 @@ public class TopDownCharacterController : MonoBehaviour
     public event Action<Vector2> OnLookEvent;
     public event Action<AttackSO> OnAttackEvent;
 
-    public float timeSinceLastAttack = float.MaxValue;
+    private float timeSinceLastAttack = float.MaxValue;
     protected bool IsAttacking { get; set; }
     protected CharacterStatsHandler Stats { get; private set; }
 
