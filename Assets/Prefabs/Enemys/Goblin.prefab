@@ -15,7 +15,9 @@ GameObject:
   - component: {fileID: 1750209046062762936}
   - component: {fileID: 6191080846229516121}
   - component: {fileID: 5922462237634789826}
-  m_Layer: 0
+  - component: {fileID: 1129030524168202139}
+  - component: {fileID: 7442271125389621412}
+  m_Layer: 6
   m_Name: Goblin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseStats:
-    statsChangeType: 0
+    statsChangeType: 2
     maxHealth: 3
     speed: 2
     attackSO: {fileID: 11400000, guid: ffdf3dcc3d402174db97c6ff2dfcd7e5, type: 2}
@@ -167,6 +169,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2237cd80edf3203488cb842eb567ffda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1129030524168202139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620585486652091633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd6ff6827e34d542b5c4ce3c096794a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthChangeDelay: 0.5
+  damageClip: {fileID: 0}
+--- !u!114 &7442271125389621412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620585486652091633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edcc41f0a6d3da347b8c38aca67bb564, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6953927884468731238
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,7 +206,7 @@ GameObject:
   - component: {fileID: 3540482270696285312}
   - component: {fileID: 3081896219188407956}
   - component: {fileID: 4559449701746753404}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
