@@ -41,7 +41,7 @@ Transform:
   - {fileID: 5906066787243020011}
   - {fileID: 113688589482328915}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &3200184192979256409
 BoxCollider2D:
@@ -132,7 +132,7 @@ MonoBehaviour:
     maxHealth: 3
     speed: 2
     attackSO: {fileID: 11400000, guid: 9f8c5d942c4f67c42a356b72a57ae3e9, type: 2}
-  statsModifier: []
+  statsModifiers: []
 --- !u!114 &3309688529396461559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,6 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followRange: 15
   shootRange: 10
+  characterRenderer: {fileID: 6561506534091105055}
 --- !u!114 &5891308495552161519
 MonoBehaviour:
   m_ObjectHideFlags: 0
